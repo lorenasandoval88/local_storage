@@ -1,17 +1,14 @@
 var box = document.querySelector('input')
-console.log(box)
+
 var header = document.querySelector("h2");
+header.innerHTML = localStorage.getItem('value')
 
+box.addEventListener('keyup', display)
 
-
-console.log(box)
-
-window.onload=function(){
-
-box.addEventListener('keyup', function(){
-    console.log("hiii")
-
-    header.innerHTML = box.value;
-})
+function display(){
+        console.log(box.value)
+        localStorage.setItem('value',box.value)
+        //header.innerHTML = box.value;
+        header.innerHTML = localStorage.getItem('value')
 }
 
